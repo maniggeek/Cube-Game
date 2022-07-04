@@ -30,18 +30,23 @@ document.getElementById('start').addEventListener('click', () => {
   // get a quote
   const quoteIndex = Math.floor(Math.random() * quotes.length);
   const quote = quotes[quoteIndex];
+
   // Put the quote into an array of words
   words = quote.split(' ');
+  console.log(words);
   // reset the word index for tracking
   wordIndex = 0;
 
   // UI updates
   // Create an array of span elements so we can set a class
   const spanWords = words.map(function(word) { return `<span>${word} </span>`});
+
   // Convert into string and set as innerHTML on quote display
   quoteElement.innerHTML = spanWords.join('');
+
   // Highlight the first word
   quoteElement.childNodes[0].className = 'highlight';
+  console.log(quoteElement.childNodes[0]);
   // Clear any prior messages
   messageElement.innerText = '';
 
@@ -56,7 +61,11 @@ document.getElementById('start').addEventListener('click', () => {
   startTime = new Date().getTime();
 });
 
-
+document.getElementById('reset').addEventListener('click',() => {
+  quoteElement.innerHTML = '';
+  messageElement.innerText = '';
+  typedValueElement.value = '';
+});
 //add event listener for input
 
 typedValueElement.addEventListener('input', () => {

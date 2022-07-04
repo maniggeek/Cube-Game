@@ -46,12 +46,19 @@ div button {
   border:1px solid skyblue;
   border-radius:20%;
   height:70px;
-  width:50px;
+  width:60px;
   margin-top:20px;
   margin-left:20px;
   cursor:pointer;
+  text-align: center;
+  padding-right:5px;
 }
-
+#reset {
+  border:1px solid red;
+}
+#reset:hover {
+  color:yellow;
+}
 div button:hover {
   background:skyblue;
   color:yellow;
